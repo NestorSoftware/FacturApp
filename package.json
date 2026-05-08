@@ -1,0 +1,63 @@
+{
+  "name": "renombreregistrofacturas",
+  "version": "1.0.0",
+  "description": "Procesador y registro de facturas con IA",
+  "main": "main.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "electron": "electron .",
+    "build": "electron-builder --win --x64"
+  },
+  "dependencies": {
+    "canvas": "^3.2.3",
+    "dotenv": "^16.4.5",
+    "exceljs": "^4.4.0",
+    "express": "^4.19.2",
+    "form-data": "^4.0.0",
+    "mammoth": "^1.8.0",
+    "multer": "^1.4.5-lts.2",
+    "openai": "^6.34.0",
+    "pdf-parse": "^1.1.1",
+    "pdfjs-dist": "^3.11.174",
+    "sharp": "^0.33.4"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.0.0",
+    "nodemon": "^3.1.4"
+  },
+  "build": {
+    "appId": "com.renombreregistrofacturas.app",
+    "productName": "RenombreRegistroFacturas",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "server.js",
+      "public/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "public",
+        "to": "public"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "public/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerLanguages": [
+        "es_ES"
+      ],
+      "language": "3082"
+    }
+  }
+}

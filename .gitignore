@@ -1,0 +1,18 @@
+# ── Node ──────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+
+# ── Variables de entorno (nunca subir claves) ─────────────────────
+.env
+
+# ── Carpetas de trabajo (datos de usuario, no código) ─────────────
+input/
+output/
+descartadas/
+revisar/
+errores/
+ArchivosExcel/
+
+# ── macOS / Windows ───────────────────────────────────────────────
+.DS_Store
+Thumbs.db
